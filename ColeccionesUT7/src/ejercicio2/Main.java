@@ -30,16 +30,16 @@ public class Main {
 			switch (opcion) {
 
 			case 1:
-				Torneo.agregarJugadores();
+				torneo.agregarJugadores(null);
 				break;
 			case 2:
-				Torneo.registrarPuntos();
+				torneo.registrarPuntos();
 				break;
 			case 3:
-				Torneo.mostrarTop3();
+				torneo.mostrarTop3();
 				break;
 			case 4:
-				Torneo.filtrarJugadoresPorPuntos();
+				torneo.filtrarJugadoresPorPuntos();
 				break;
 			case 5:
 				parar = true;
