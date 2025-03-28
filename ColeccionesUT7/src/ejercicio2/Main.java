@@ -12,10 +12,13 @@ public class Main {
 		// Importamos el escaner.
 		Scanner sc = new Scanner(System.in);
 
+		// Crearemos un booleano para poder hacer que el menú se repita.
 		boolean parar = false;
 
+		// Creamos el menú en el bucle while usando el boolean anterior.
 		while (!parar) {
 
+			// Le mostramos las opciones al usuario.
 			System.out.println("--Menú de Torneo--");
 			System.out.println("Escoge la opción que desees:");
 			System.out.println("1 - Agregar judador a torneo.");
@@ -25,8 +28,10 @@ public class Main {
 			System.out.println("5 - Salir.");
 			System.out.println();
 
+			// Esta será la respuesta del usuario.
 			int opcion = sc.nextInt();
 
+			// Creamos un switch para responder a la elección del usuario.
 			switch (opcion) {
 
 			case 1:

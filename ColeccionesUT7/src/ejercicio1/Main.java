@@ -30,6 +30,7 @@ public class Main {
 			System.out.println("Error al cancelar la reserva: " + e.getMessage());
 		}
 
+		// Con esta línea mostraremos las plazas del evento dispinibles.
 		System.out.println("Plazas disponibles: " + evento.plazasDisponibles());
 	}
 }

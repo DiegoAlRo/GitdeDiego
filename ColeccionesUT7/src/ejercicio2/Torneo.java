@@ -88,6 +88,7 @@ public class Torneo {
 		List<Jugador> filtrados = jugadores.stream().filter(j -> j.obtenerPuntosTotales() > puntosMinimos)
 				.collect(Collectors.toList());
 
+		// Con esta línea mostraremos los judadores con más puntos obtenidos.
 		System.out.println("Jugadores con más de " + puntosMinimos + " puntos:");
 		filtrados.forEach(System.out::println);
 	}

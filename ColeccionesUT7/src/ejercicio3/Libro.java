@@ -1,28 +1,24 @@
 package ejercicio3;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
+// Creamos el objeto libro, el cuál implementará la interfaz Prestable.
 public class Libro implements Prestable {
 
 	private String titulo;
 	private String autor;
 	private LocalDate fechaPublicacion;
-	private List<String> Optimal;
-	private Optional<String> usuarioPrestamo;
+	private Optional<String> usuarioPrestamo = Optional.empty();
 
-	public Libro(String titulo, String autor, LocalDate fechaPublicacion, List<String> Optimal) {
-
+	public Libro(String titulo, String autor, LocalDate fechaPublicacion) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.fechaPublicacion = fechaPublicacion;
-		this.Optimal = new ArrayList<>();
-		this.usuarioPrestamo = Optional.empty();
 
 	}
 
+	// Importamos los getters.
 	public String getTitulo() {
 		return titulo;
 	}
@@ -35,10 +31,8 @@ public class Libro implements Prestable {
 		return fechaPublicacion;
 	}
 
-	public List<String> getOptimal() {
-		return Optimal;
-	}
-
+	// Implementamos uno de los métodos de la interfaz, que se encargará de prestar
+	// un libro en caso de estar disponible.
 	public boolean prestar(String usuario) {
 		if (usuarioPrestamo.isEmpty()) {
 			usuarioPrestamo = Optional.of(usuario);
@@ -48,6 +42,8 @@ public class Libro implements Prestable {
 
 	}
 
+	// Implementamos el segundo método de la interfaz, el cuál se encargará de
+	// devolver un libro.
 	public boolean devolver(String usuario) {
 		if (usuarioPrestamo.isPresent() && usuarioPrestamo.get().equals(usuario)) {
 			usuarioPrestamo = Optional.empty();
@@ -56,9 +52,11 @@ public class Libro implements Prestable {
 		return false;
 	}
 
+	// Este string podrá mostrar la información sobre libro.
 	public String toString() {
-		return String.format("Libro: %s, Autor: %s, Publicado: %s, Prestado: %s", titulo, autor, fechaPublicacion,
-				usuarioPrestamo.orElse("No"));
+		return "Libro{" + "titulo='" + titulo + '\'' + ", autor='" + autor + '\'' + ", fechaPublicacion="
+				+ fechaPublicacion + ", usuarioPrestamo="
+				+ (usuarioPrestamo.isPresent() ? usuarioPrestamo.get() : "Ninguno") + '}';
 	}
 
 	public boolean estaPrestado() {
