@@ -54,9 +54,8 @@ public class Libro implements Prestable {
 
 	// Este string podrá mostrar la información sobre libro.
 	public String toString() {
-		return "Libro{" + "titulo='" + titulo + '\'' + ", autor='" + autor + '\'' + ", fechaPublicacion="
-				+ fechaPublicacion + ", usuarioPrestamo="
-				+ (usuarioPrestamo.isPresent() ? usuarioPrestamo.get() : "Ninguno") + '}';
+		return "Libro:" + "\nTítulo = " + titulo + "\nAutor = " + autor + "\nFecha de publicacion = " + fechaPublicacion
+				+ "\nPréstamo de usuario = " + (usuarioPrestamo.isPresent() ? usuarioPrestamo.get() : "Ninguno") + '}';
 	}
 
 	public boolean estaPrestado() {
