@@ -51,8 +51,6 @@ public class Jugador implements Competidor {
 
 	// Usamos un toString para mostrar la información sobre el jugador.
 	public String toString() {
-		return "Jugador{\" +\r\n" + "                \"nombre='\" + nombre + '\\'' +\r\n"
-				+ "                \", fechaRegistro=\" + fechaRegistro +\r\n"
-				+ "                \", puntos totales=\" + obtenerPuntosTotales() +\r\n" + "                '}'";
+		return "Jugador" + " ";
 	}
 }
